@@ -185,6 +185,13 @@ function goFight() {
   monsterHealthText.innerText = monsters[fighting].health;
 }
 
-function attack() {}
+function attack() {
+  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  text.innerText +=
+    " You attack it with your " + weapons[currentWeapon].name + ".";
+  health -= monsters[fighting].level;
+  monsterHealth -= weapons[currentWeapon].power;
+  xp += Math.floor(Math.random() * weapons[currentWeapon].power) + 1;
+}
 
 function dodge() {}
