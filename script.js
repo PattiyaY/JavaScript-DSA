@@ -63,14 +63,14 @@ const locations = [
   },
 ];
 
-const monster = [
+const monsters = [
   {
     name: "slime",
     level: 2,
     health: 15,
   },
   {
-    name: "franged beast",
+    name: "fanged beast",
     level: 8,
     health: 60,
   },
