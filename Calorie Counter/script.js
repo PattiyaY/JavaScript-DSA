@@ -22,6 +22,14 @@ function isInvalidInput(str) {
   /* Specified the escape operators
     e -> exponential
     i -> pattern case-insensitive. Eg -> hello, Hello, HELLO, and even hElLo
+    \d -> match any digit
+
   */
   const regex = /\d+e\d+/i;
+
+  return str.match(regex);
+}
+
+function addEntry() {
+  const targetId = "#" + entryDropdown.value;
 }
