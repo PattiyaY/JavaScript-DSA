@@ -10,10 +10,18 @@ let isError = false;
 function cleanInputString(str) {
   /* Specified the escape operators
     \s -> escape white spaces
-    g is a flag, it'll keep looking until the end
+    g  -> a flag, it'll keep looking until the end
   */
   const regex = /[+-\s]/g;
 
   //Replace characters(regex) with ""
   return str.replace(regex, "");
+}
+
+function isInvalidInput(str) {
+  /* Specified the escape operators
+    e -> exponential
+    i -> pattern case-insensitive. Eg -> hello, Hello, HELLO, and even hElLo
+  */
+  const regex = /\d+e\d+/i;
 }
