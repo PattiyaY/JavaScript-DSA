@@ -47,7 +47,7 @@ function addEntry() {
   <input type="number" min="0" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories" >
   `;
 
-  targetInputContainer.insertAdjacentElement();
+  targetInputContainer.insertAdjacentElement("beforeend", HTMLString);
 }
 
 const addEntrybutton = document.querySelector(".btn");
