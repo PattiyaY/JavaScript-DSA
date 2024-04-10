@@ -36,7 +36,7 @@ function addEntry() {
   );
 
   const entryNumber =
-    targetInputContainer.querySelectorAll('input[type="text"]').length;
+    targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
 
   const HTMLString = `<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
 
@@ -47,5 +47,8 @@ function addEntry() {
   <input type="number" min="0" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories" >
   `;
 
-  targetInputContainer.innerHTML += HTMLString;
+  targetInputContainer.insertAdjacentElement();
 }
+
+const addEntrybutton = document.querySelector(".btn");
+addEntryButton.addEventListener("click", addEntry);
