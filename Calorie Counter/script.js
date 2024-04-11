@@ -96,6 +96,8 @@ function calculateCalories(e) {
     budgetCalories - consumedCalories + exerciseCalories;
 }
 
+const surplusOrDeficit;
+
 function getCaloriesFromInputs(list) {
   let calories = 0;
   for (const item of list) {
@@ -109,6 +111,8 @@ function getCaloriesFromInputs(list) {
     calories += Number(currVal);
   }
   return calories;
+
+
 }
 
 addEntryButton.addEventListener("click", addEntry);
