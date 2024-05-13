@@ -7,8 +7,9 @@ function checkPalindrome(text) {
   if (text === "") {
     alert("Please input a value");
   } else {
-    const reverseText = reverseString(text);
-    if (reverseText === text) {
+    const cleanText = cleanInputString(text);
+    const reverseText = reverseString(cleanText);
+    if (reverseText === cleanText) {
       result.innerHTML = generateOutput(text, true);
     } else {
       result.innerHTML = generateOutput(text, false);
@@ -26,6 +27,22 @@ function generateOutput(text, isPalindrome) {
 
 function reverseString(str) {
   return str.split("").reverse().join("");
+}
+
+function cleanInputString(str) {
+  str = str.toLowerCase();
+  const regex = /[_,\.-\\\/\s]/g;
+  str = str.replace(/_/g, "");
+  str = str.replace(/\s/g, "");
+  str = str.replace(/,/g, "");
+  str = str.replace(/\./g, "");
+  str = str.replace(/-/g, "");
+  str = str.replace(/\\/g, "");
+  str = str.replace(/\//g, "");
+  str = str.replace(/[()]/g, "");
+
+  console.log(str);
+  return str;
 }
 
 checkButton.addEventListener("click", () => {
